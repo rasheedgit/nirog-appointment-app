@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Dr. Ayesha Khan",
+    "name": "Dr. Doctor Pal!",
     "specialization": "Cardiologist",
     "availability": "Available Today",
     "image": "https://dn96iqv3kf32j.cloudfront.net/new-company-website-files/engage-patients-section/1-engagePatientsImage.svg"
   },
   {
     "id": 2,
-    "name": "Dr. Rohan Mehta",
+    "name": "Dr. Shweta Gandhi",
     "specialization": "Dermatologist",
     "availability": "Fully Booked",
     "image": "http://media.licdn.com/dms/image/v2/D4D03AQFj7xRu80Y5BA/profile-displayphoto-shrink_400_400/B4DZZ7dX8bHwAg-/0/1745828020695?e=2147483647&v=beta&t=Q_1_aXuDQ2wpLkdMf1bzFp7DBHRwOChYY94hJ0ks-80"
   },
   {
     "id": 3,
-    "name": "Dr. Nidhi Sharma",
+    "name": "Dr. Joyneel Acharya",
     "specialization": "Pediatrician",
     "availability": "On Leave",
-    "image": "https://dn96iqv3kf32j.cloudfront.net/home/static/imgs/client-message-2.png"
+    "image": "https://media.licdn.com/dms/image/v2/D4D22AQGYVPgVAlGdZg/feedshare-shrink_2048_1536/B4DZgrt2TkHYAo-/0/1753080097400?e=2147483647&v=beta&t=GRaHm-c_xNqpMh_uv1b2NSzJeGaNeiFOlZE5IcYHOgk"
   }
 ]
