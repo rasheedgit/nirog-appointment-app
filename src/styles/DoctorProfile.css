@@ -1,0 +1,44 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.profile-container img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #3498db;
+  margin-bottom: 20px;
+}
+
+.profile-container h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.profile-container p {
+  font-size: 16px;
+  color: #555;
+  margin: 6px 0;
+}
+
+.book-btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.book-btn:hover {
+  background-color: #2980b9;
+}

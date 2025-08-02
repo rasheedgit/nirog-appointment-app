@@ -1,34 +1,36 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import doctorsData from "../data/doctors.json";
-import { useNavigate } from "react-router-dom";
+import "../styles/DoctorProfile.css";
 
 function DoctorProfile() {
   const { id } = useParams();
-  const doctor = doctorsData.find((doc) => doc.id === parseInt(id));
   const navigate = useNavigate();
+  const doctor = doctorsData.find((doc) => doc.id === parseInt(id));
+
+  if (!doctor) {
+    return (
+      <div className="profile-container">
+        <h2>Doctor not found</h2>
+      </div>
+    );
+  }
+
   const handleBooking = () => {
     navigate("/book", { state: { doctor } });
   };
 
-  if (!doctor) {
-    return <div>Doctor not found</div>;
-  }
-
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="profile-container">
+      <img src={doctor.image} alt={doctor.name} />
       <h1>{doctor.name}</h1>
-      <img
-        src={doctor.image}
-        alt={doctor.name}
-        style={{ width: "150px", borderRadius: "50%" }}
-      />
-      <p>Specialization: {doctor.specialization}</p>
-      <p>Availability: {doctor.availability}</p>
-      <button
-        onClick={handleBooking}
-        style={{ marginTop: "20px", padding: "10px 20px" }}
-      >
+      <p>
+        <strong>Specialization:</strong> {doctor.specialization}
+      </p>
+      <p>
+        <strong>Availability:</strong> {doctor.availability}
+      </p>
+      <button className="book-btn" onClick={handleBooking}>
         Book Appointment
       </button>
     </div>

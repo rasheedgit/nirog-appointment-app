@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import "../styles/BookAppointment.css";
 
 function BookAppointment() {
   const navigate = useNavigate();
@@ -15,7 +16,11 @@ function BookAppointment() {
   const [submitted, setSubmitted] = useState(false);
 
   if (!doctor) {
-    return <div>Doctor not selected.</div>;
+    return (
+      <div className="book-container">
+        <h2>Doctor not selected.</h2>
+      </div>
+    );
   }
 
   const handleChange = (e) => {
@@ -23,19 +28,14 @@ function BookAppointment() {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+
     if (!formData.name || !formData.email || !formData.date || !formData.time) {
       alert("Please fill all fields.");
       return;
     }
-    if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      alert("Enter a valid email.");
-      return;
-    }
 
-    e.preventDefault();
     setSubmitted(true);
-
-    // Optional: Add real API call here
     console.log("Appointment booked:", {
       doctor: doctor.name,
       ...formData,
@@ -43,63 +43,57 @@ function BookAppointment() {
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Book Appointment with {doctor.name}</h2>
-
+    <div className="book-container">
       {!submitted ? (
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Patient Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label>Date:</label>
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label>Time:</label>
-            <input
-              type="time"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <button type="submit" style={{ marginTop: "10px" }}>
-            Confirm Appointment
-          </button>
-        </form>
+        <>
+          <h2>Book Appointment with {doctor.name}</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Patient Name:</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>Email:</label>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>Date:</label>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label>Time:</label>
+              <input
+                type="time"
+                name="time"
+                value={formData.time}
+                onChange={handleChange}
+              />
+            </div>
+            <button type="submit">Confirm Appointment</button>
+          </form>
+        </>
       ) : (
-        <div>
+        <div className="confirmation">
           <h3>Appointment Confirmed!</h3>
-          <p>Thank you, {formData.name}. Your appointment is booked.</p>
+          <p>
+            Thank you, {formData.name}. Your appointment with {doctor.name} is
+            booked.
+          </p>
           <button onClick={() => navigate("/")}>Back to Home</button>
         </div>
       )}
