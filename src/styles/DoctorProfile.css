@@ -42,3 +42,23 @@
 .book-btn:hover {
   background-color: #2980b9;
 }
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-container img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-container h1 {
+    font-size: 22px;
+  }
+
+  .book-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

@@ -80,3 +80,22 @@ form button:hover {
 .confirmation button:hover {
   background-color: #27ae60;
 }
+
+@media (max-width: 768px) {
+  .book-container {
+    padding: 20px;
+  }
+
+  form input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  form button {
+    font-size: 14px;
+  }
+
+  .confirmation p {
+    font-size: 14px;
+  }
+}

@@ -36,3 +36,18 @@
   font-size: 14px;
   color: #555;
 }
+
+@media (max-width: 768px) {
+  .doctor-card {
+    width: 90%;
+    padding: 16px;
+  }
+
+  .doctor-card h3 {
+    font-size: 18px;
+  }
+
+  .doctor-card p {
+    font-size: 13px;
+  }
+}
