@@ -11,6 +11,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/doctor/:id" element={<DoctorProfile />} />
         <Route path="/book" element={<BookAppointment />} />
+        <Route
+          path="*"
+          element={
+            <div style={{ padding: 20 }}>
+              <h2>Page Not Found</h2>
+            </div>
+          }
+        />
       </Routes>
     </Router>
   );

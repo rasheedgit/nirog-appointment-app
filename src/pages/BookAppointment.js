@@ -23,6 +23,15 @@ function BookAppointment() {
   };
 
   const handleSubmit = (e) => {
+    if (!formData.name || !formData.email || !formData.date || !formData.time) {
+      alert("Please fill all fields.");
+      return;
+    }
+    if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      alert("Enter a valid email.");
+      return;
+    }
+
     e.preventDefault();
     setSubmitted(true);
 
