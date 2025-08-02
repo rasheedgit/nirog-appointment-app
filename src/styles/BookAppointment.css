@@ -1,8 +1,8 @@
 .book-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: auto;
   padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -33,6 +33,7 @@ form input {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
+  margin-left: 20px;
 }
 
 form input:focus {
@@ -84,6 +85,7 @@ form button:hover {
 @media (max-width: 768px) {
   .book-container {
     padding: 20px;
+    max-width: 80%;
   }
 
   form input {
